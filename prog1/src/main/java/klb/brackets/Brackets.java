@@ -26,35 +26,50 @@ public class Brackets {
         String stosBra = "";
 
         for (int i = 0; i < S.length(); i++) {
-                  if(S.charAt(i) == '(' || S.charAt(i) == '[' || S.charAt(i) == '{' ||
-                          S.charAt(i) == ')' || S.charAt(i) == ']' || S.charAt(i) == '}'  ){
-                      stosBra = stosBra + S.charAt(i);
-                  }
+            if (S.charAt(i) == '(' || S.charAt(i) == '[' || S.charAt(i) == '{' ||
+                    S.charAt(i) == ')' || S.charAt(i) == ']' || S.charAt(i) == '}') {
+                stosBra = stosBra + S.charAt(i);
+            }
         }
 
-        if (stosBra.length()%2 == 1){
+        if (stosBra.length() % 2 == 1) {
             System.out.println(1);
             return 0; //BAD
         }
 
         //         {[()()]}
+        //(((((((((((((((((((((((((((((((((((((((((((((((((((((((9
+        if (stosBra.charAt(0) == '(') {
+            for (int i = 0; i < stosBra.length(); i++) {
+                if (stosBra.charAt(i) != '(' || stosBra.charAt(i) != ')') {
+                    return 0;
+                }
+                if (stosBra.charAt(i) == '(') {
+                    stack.push(stosBra.charAt(i));
+                }
+                if (stosBra.charAt(i) == ')') {
+                    if (stack.empty()) {
+                        return 0;
+                    }
+                    stack.pop();
+                }
+            }
+            if (stack.empty()) {
+                return 1;
+            }
+            return 0;
+        }
 
-//        if (stosBra.charAt(0) == '('){
-//            for (int i = 0; i < stosBra.length(); i++) {
-//                if (stosBra.charAt(i) != '(' || stosBra.charAt(i) != ')'){
-//                    return 0;
-//                }
-//                if (stosBra.charAt(i) == '('){
-//                    stack.push(stosBra.charAt(i));
-//                }
-//                if
-//            }
-//
-//
-//
-//
-//        }
 
+        if (stosBra.charAt(0) == '[') {
+            for (int i = 0; i < stosBra.length(); i++) {
+                if (stosBra.charAt(i) != '(' || stosBra.charAt(i) != ')'
+                        || stosBra.charAt(i) != '[' || stosBra.charAt(i) != ']') {
+                    return 0;
+                }
+
+            }
+        }
 
 
         return 0;

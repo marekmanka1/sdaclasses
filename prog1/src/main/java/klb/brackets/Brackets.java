@@ -58,20 +58,20 @@ public class Brackets {
                 return 1;
             }
             return 0;
-        }
+        }//(((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((9
 
-
+        //[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
         if (stosBra.charAt(0) == '[') {
             for (int i = 0; i < stosBra.length(); i++) {
                 if (stosBra.charAt(i) != '(' || stosBra.charAt(i) != ')'
                         || stosBra.charAt(i) != '[' || stosBra.charAt(i) != ']') {
                     return 0;
                 }
-
+            //nast war
             }
-        }
+        }//[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
 
-
+        //koniec metody
         return 0;
     }
 
